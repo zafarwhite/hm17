@@ -8,7 +8,7 @@
 // app.listen(3000, function () {
 //   console.log('Example app listening on port 3000!');
 // });
-var exrpress = require('express');
+var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
@@ -30,6 +30,9 @@ var courses = [
     }
 ]
 
+app.get('/', function(req, res) {
+    res.send('Hello World');
+});
 
 //get all courses
 app.get('/api/courses', function (req, res) {
@@ -53,7 +56,7 @@ app.post('/api/courses', function (req, res) {
     courses.push(course);
 
     res.send(courses);
-}):
+});
 
 
 app.listen(3000, function () {
