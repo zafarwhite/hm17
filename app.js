@@ -68,7 +68,7 @@ app.put('/api/courses/:id', function(req, res) {
 
 app.delete('/api/courses/:id', function(req, res) {
     course = courses.filter(function (course) {
-        return course.id !=== parseInt(req.params.id)
+        return course.id !== parseInt(req.params.id);
     });
     res.sendStatus(200);
 });
