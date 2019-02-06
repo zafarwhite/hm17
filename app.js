@@ -66,12 +66,12 @@ app.put('/api/courses/:id', function(req, res) {
     res.send(course);
 });
 
-// app.delete('/api/courses/:id', function(req, res) {
-//     var course = courses.find(function (course) {
-//         return course.id !=== parseInt(req.params.id)
-//     });
-//     res.send(course);
-// });
+app.delete('/api/courses/:id', function(req, res) {
+    course = courses.filter(function (course) {
+        return course.id !=== parseInt(req.params.id)
+    });
+    res.sendStatus(200);
+});
 
 
 app.listen(3000, function () {
