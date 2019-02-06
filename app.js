@@ -58,6 +58,21 @@ app.post('/api/courses', function (req, res) {
     res.send(courses);
 });
 
+app.put('/api/courses/:id', function(req, res) {
+    var course = courses.find(function (course) {
+        return course.id === parseInt(req.params.id)
+    });
+    course.name = req.body.name;
+    res.send(course);
+});
+
+// app.delete('/api/courses/:id', function(req, res) {
+//     var course = courses.find(function (course) {
+//         return course.id !=== parseInt(req.params.id)
+//     });
+//     res.send(course);
+// });
+
 
 app.listen(3000, function () {
     console.log('Example app listining on port 3000!');
